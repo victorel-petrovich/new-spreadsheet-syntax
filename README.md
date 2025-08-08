@@ -148,9 +148,7 @@ Each of sheetIndex, columnIndex, rowIndex is integer starting at 1 or any math e
 
 **s**, **c**,**r** are variables always standing for the respective index of the current cell (the one with the formula); as well as names for the functions returning row/column/sheet index given a reference. 
 
-The expression for *rowIndex*: if it contains **r** then it is a relative reference. Otherwise, it's an absolute reference (even if it contains **c** or **s** ).
-
-Similarly for columnIndex and sheetIndex.
+Each of the 3 Index expressions is a relative reference if it contains one or more of {**s**, **r**, **c**} and it's an absolute reference otherwise.
 
 The sheetIndex can be specified specified using the sheet name as well, the name being a constant standing for the respective sheet index (only cheangeable when the user shuffles or renames the sheets). 
 
