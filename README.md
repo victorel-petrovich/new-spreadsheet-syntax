@@ -1,14 +1,15 @@
-# new-spreadsheet-syntax
-*A better spreadsheet addressing syntax*
+# A better spreadsheet addressing syntax
 
 Consider all these ideas in public domain.
 
-## Description:
+## Motivation
 
 Whoever invented the A1 or even R1C1 addressing syntax perhaps made it easy for getting started or trivial formulas, but hard for anything else.
 
-The main trouble with it is that it does not allow for indices that are mathematically directly computed. That is, arbitrary math integer expressions for indices.
+The main problem is that it does not allow for arbitrary math integer expressions for indices. This leads to the frequent need to use indirect specifications of index values, via INDEX, INDIRECT,ADDRESS, OFFSET... and formulas that are harder to understand, write and read.
+Another issue is that with A1 style, the syntax of  relative and absolute addressing is rather arbitrary, removed from the intent behind a particular formula. Consider " in this cell, I'm going to put  the previous 4 cells in same column, and repeat so for each row downward".  In A1 notation, you instead specify the particular index of rows that currently happen to be previous 4. 
 
+## Specification for column and row indices
 Drawing some inspiration from pyspread ( https://pyspread.gitlab.io/tutorial.html ) and my own musings on this:
 
 *Let both row and column indices be numerical, starting either from 1 or 0.*
@@ -17,9 +18,9 @@ Drawing some inspiration from pyspread ( https://pyspread.gitlab.io/tutorial.htm
 
 Sheet index as well (but name will also be possible, later on this).
 
-Let `[1,2]` mean the reference to cell in row 1 and column 2. 
+Let `[1,2]` mean the reference to cell in column 1 and row 2. 
 
-More specifically, this will be an **absolute reference** , equivalent to , and replacing the need for, INDIRECT(ADDRESS(1,2)), which returns cell $B$1.
+More specifically, this will be an **absolute reference** , equivalent to , and replacing the need for, INDIRECT(ADDRESS(2,1)), which returns cell $A$2.
 
 This is the shortest syntax I could think of, hence no letter/name in front, that allows for any math expression in place of the 2 indices, but also is readable enough, and kind-of reminiscent of a cells's box boundaries.
 
