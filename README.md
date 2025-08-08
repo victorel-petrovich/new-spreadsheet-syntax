@@ -56,12 +56,18 @@ Will Still need row/column functions, because sometimes need to compute offsets 
 
 **Mixed absolute-relative references**
 
-ex, if formula is in column 1, row 1, and want to refer to column 4  and 3 rows down, then '=[4, r+3]` <=> `=$D4`
+ex, if formula is in column 1, row 1, and want to refer to column 4  and 3 rows down, then 
+`=[4, r+3]` 
+<=> 
+`=$D4`
 
 There will also be the opportunity to accept ranges of indices, as in: 
+
 `[2:5, r]`
 
-meaning all cells in current row at columns 2 to 5. Could also have  `[2:2:15, r]`, specifying a step, and perhaps other nice ideas borrowed from common programming languages.
+meaning all cells in current row at columns 2 to 5.
+
+Could also have  `[2:2:15, r]`, specifying a step, and perhaps other nice ideas borrowed from common programming languages.
 
 
 ### Sheet index and name
@@ -109,7 +115,7 @@ vs
 
 `=MAX(B7:E7)`
 
-`=MAX(R[-1]C[-7]:R[-1]C[-1]`
+`=MAX(R[-1]C[-7]:R[-1]C[-1])`
 
 vs:
 
