@@ -20,6 +20,8 @@ vs
 ## Deriving the syntax
 Let's assume for now that we work in a single sheet.
 
+### Column and row index
+
 *Let `[1,2]` mean the reference to cell in column 1 and row 2*
 
 This is the shortest syntax I could think of, hence no letter/name in front, so that it allows for any math expression in place of the 2 indices, but also is readable enough, and reminiscent of a cell's box.
@@ -80,7 +82,7 @@ is same as
 
 and the user will index the sheet in the way that's convenient for them.
 
-### Shortcut syntax
+### Shorter forms
 Since specifying the sheet index is optional while in same sheet, i.e 
 
 `[s,colInd,rowInd]` <=> `[colInd, rowInd]`
@@ -146,12 +148,14 @@ Similarly for columnIndex and sheetIndex.
 
 The sheetIndex can be specified specified using the sheet name as well, the name being a constant standing for the respective sheet index (only cheangeable when the user shuffles or renames the sheets). 
 
-### Shorter forms
+**Shorter forms**
+
 `=[columnIndex, rowIndex]`  equal to `=[s, columnIndex, rowIndex]`  (refering to cell in same sheet)
 
 `=[rowIndex]` equal to `=[s, c, rowIndex]`  (refering to cell in same sheet and same column)
 
 **Refering to an external workbook:**
+
 `"filepath to workbook"@[sheetIndex, columnIndex, rowIndex]` (the `@` is just an example of possible syntax)
 
 
